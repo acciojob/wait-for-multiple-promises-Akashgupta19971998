@@ -6,26 +6,26 @@ let count=0;
 
 let promise1=new Promise((resolve,reject)=>{
     const randomNumber= Math.random() * (4-1)
-    let tr=document.createElement('tr')
+    //let tr=document.createElement('tr')
     setTimeout(() => {
-        resolve("1",new Date())
+        resolve(`<tr><td>Promise 1</td>time taken by it to resolve in seconds${randomNumber}, for<td></td></tr>`)
     }, randomNumber);
     count+=randomNumber
 })
 
 let promise2=new Promise((resolve,reject)=>{
     const randomNumber= Math.random() * (4-1)
-    let tr=document.createElement('tr')
+   // let tr=document.createElement('tr')
     setTimeout(() => {
-        resolve("2",new Date())
+        resolve(`<tr><td>Promise 2</td>time taken by it to resolve in seconds${randomNumber}, for<td></td></tr>`)
     }, randomNumber);
     count+=randomNumber
 })
 let promise3=new Promise((resolve,reject)=>{
     const randomNumber= Math.random() * (4-1)
-    let tr=document.createElement('tr')
+    //let tr=document.createElement('tr')
     setTimeout(() => {
-        resolve("3",new Date())
+        resolve(`<tr><td>Promise 2</td>time taken by it to resolve in seconds${randomNumber}, for<td></td></tr>`)
     }, randomNumber);
     count+=randomNumber
 })
@@ -33,11 +33,11 @@ let promise3=new Promise((resolve,reject)=>{
 let promise4=new Promise((resolve,reject)=>{
     let tr=document.createElement('tr')
     setTimeout(() => {
-        resolve("4",new Date())
+        resolve(`<tr><td>total</td>time taken to resolve all promises in seconds (should be a decimal number), for ${count}, for<td></td></tr>`)
     }, count);
 })
 
-Promise.all([promise1,promise2,promise3,promise4]).then((values)=>{
+Promise.all ([promise1,promise2,promise3,promise4]).then((values)=>{
 console.log("values",values, new Date())
 }).catch((err)=>{
 console.log("err", err)
